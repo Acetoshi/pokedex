@@ -1,23 +1,18 @@
-const pokemonList = [
 
-    {
-        name: "bulbasaur",
-        imgSrc:
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    },
-    {
-        name: "mew",
-    },
 
-];
+export default function PokemonCard(props) {
 
-export default function PokemonCard() {
-     const pokemon = pokemonList[1];
+    const {name, imgSrc} = props; /// idem que ({name, imgSrc})
+
+    console.log(name);
+    console.log(pokemon);
 
     return <figure> 
-        {(pokemon.imgSrc)?<img src={pokemon.imgSrc} alt="bulbizarre"/>:<p>MissingNo</p>}
-        <figcaption>{pokemon.name}</figcaption>
+        {(imgSrc)?<img src={imgSrc} alt={name}/>:<p>MissingNo</p>}
+        <figcaption>{name}</figcaption>
         </figure >;
 }
+
+/// double console.log >> en lien avec le "script mode"
 
 

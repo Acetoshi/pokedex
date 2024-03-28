@@ -1,27 +1,36 @@
 import { useState } from 'react'
 import PokemonCard from './components/PokemonCard.jsx'
 import './App.css'
+import { pokemonList } from './pokemonList.js'
 
 function App() {
 
   // props
-  const pokemonList = [
+  const [pokeNumber, setPokeNumber] = useState(0);
 
-    {
-        name: "bulbasaur",
-        imgSrc:
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    },
-    {
-        name: "mew",
-    },
 
-];
+
+  function next() {
+    setPokeNumber((pokeNumber) => {
+      if (pokeNumber < pokemonList.length - 1) { return pokeNumber + 1 }
+      else { return pokeNumber }
+    })
+  };
+
+  function previous() {
+    setPokeNumber((pokeNumber) => {
+      if (pokeNumber > 0) { return pokeNumber - 1 }
+      else { return pokeNumber }
+    }
+    )
+  };
 
   return (
     <>
       <div>
-        <PokemonCard  name={pokemonList[0].name} imgSrc={pokemonList[0].imgSrc}/>
+        <PokemonCard name={pokemonList[pokeNumber].name} imgSrc={pokemonList[pokeNumber].imgSrc} />
+        <button onClick={previous}>PREVIOUS</button>
+        <button onClick={next}>NEXT</button>
       </div>
 
     </>

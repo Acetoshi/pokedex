@@ -11,18 +11,12 @@ function App() {
 
 
   function next() {
-    setPokeNumber((pokeNumber) => {
-      if (pokeNumber < pokemonList.length - 1) { return pokeNumber + 1 }
-      else { return pokeNumber }
-    })
+    (pokeNumber < pokemonList.length - 1)? setPokeNumber((pokeNumber) => pokeNumber + 1) : pokeNumber;
+
   };
 
   function previous() {
-    setPokeNumber((pokeNumber) => {
-      if (pokeNumber > 0) { return pokeNumber - 1 }
-      else { return pokeNumber }
-    }
-    )
+    (pokeNumber > 0)? setPokeNumber((pokeNumber) => pokeNumber - 1) : pokeNumber;
   };
 
   return (
@@ -30,7 +24,7 @@ function App() {
       <div>
         <PokemonCard name={pokemonList[pokeNumber].name} imgSrc={pokemonList[pokeNumber].imgSrc} />
         <button onClick={previous}>PREVIOUS</button>
-        <button onClick={next}>NEXT</button>
+        (false)?<button onClick={next}>NEXT</button>
       </div>
 
     </>

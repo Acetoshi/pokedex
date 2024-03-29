@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import PokemonCard from './components/PokemonCard.jsx'
+import NavBar from './components/NavBar.jsx'
 import './App.css'
 import { pokemonList } from './pokemonList.js'
 
@@ -22,9 +23,8 @@ function App() {
   return (
     <>
       <div>
+        <NavBar next={next} previous={previous}/>
         <PokemonCard name={pokemonList[pokeNumber].name} imgSrc={pokemonList[pokeNumber].imgSrc} />
-        <button onClick={previous}>PREVIOUS</button>
-        (false)?<button onClick={next}>NEXT</button>
       </div>
 
     </>

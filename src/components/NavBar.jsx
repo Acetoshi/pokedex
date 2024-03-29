@@ -7,7 +7,12 @@ function NavBar({ pokemonList, setPokeNumber}) {
             <ul>
                 {pokemonList.map((pokemon,index) => (
                     <li key={pokemon.name}>
-                        <button onClick={()=>setPokeNumber(index)}>
+                        <button onClick={()=>{
+                            setPokeNumber(index);
+                            if (index==3){
+                                alert("Pi-KA-cuhuuuu !")
+                            }
+                            }}>
                         {pokemon.name}
                         </button>
                     </li>

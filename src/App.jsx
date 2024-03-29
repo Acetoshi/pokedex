@@ -3,22 +3,20 @@ import PokemonCard from './components/PokemonCard.jsx'
 import NavBar from './components/NavBar.jsx'
 import './App.css'
 import { pokemonList } from './pokemonList.js'
+import { useEffect } from "react";
 
 function App() {
 
-  // props
+  // state
   const [pokeNumber, setPokeNumber] = useState(0);
 
-
-
-  function next() {
-    (pokeNumber < pokemonList.length - 1)? setPokeNumber((pokeNumber) => pokeNumber + 1) : pokeNumber;
-
-  };
-
-  function previous() {
-    (pokeNumber > 0)? setPokeNumber((pokeNumber) => pokeNumber - 1) : pokeNumber;
-  };
+  //
+  useEffect(
+    () => {
+      alert("Welcome to the world of pokemon, i am Oak.");
+    },
+    []
+  );
 
   return (
     <>

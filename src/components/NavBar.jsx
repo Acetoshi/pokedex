@@ -1,11 +1,18 @@
 import './NavBar.css'
 
-function NavBar({ next, previous }) {
+function NavBar({ pokemonList, setPokeNumber}) {
 
     return <>
         <nav>
-            <button onClick={previous}>PREVIOUS</button>
-            <button onClick={next}>NEXT</button>
+            <ul>
+                {pokemonList.map((pokemon,index) => (
+                    <li key={pokemon.name}>
+                        <button onClick={()=>setPokeNumber(index)}>
+                        {pokemon.name}
+                        </button>
+                    </li>
+                ))}
+            </ul>
         </nav>
     </>
 

@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <div>
-        <NavBar next={next} previous={previous}/>
+        <NavBar pokemonList={pokemonList} setPokeNumber={setPokeNumber}/>
         <PokemonCard name={pokemonList[pokeNumber].name} imgSrc={pokemonList[pokeNumber].imgSrc} />
       </div>
 
